@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import './App.css'
+
 import Header from './components/header'
-import Navbar from './components/components-navbar/navbar'
+import Navbar from './components/navbar'
 import Footer from './components/footer'
 import Content from './components/content'
 // -----------------------------------------------
 import "bootstrap/dist/css/bootstrap.min.css"
-
+import './App.css'
 
 
 function App() {
