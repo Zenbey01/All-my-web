@@ -1,9 +1,10 @@
 import { useState } from 'react'
 
-import Header from './components/header'
+// import Header from './components/header'
 import Navbar from './components/navbar'
 import Footer from './components/footer'
 import Content from './components/content'
+import Carousel from './components/carousel'
 // -----------------------------------------------
 import "bootstrap/dist/css/bootstrap.min.css"
 import './App.css'
@@ -16,6 +17,7 @@ function App() {
     <div className='app'>
       {/* <Header /> */}
       <Navbar />
+      <Carousel />
       <Content />
       <h1> Welcome to my world </h1>
       <p>- Robin Honkai star rail</p>

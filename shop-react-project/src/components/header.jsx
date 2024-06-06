@@ -1,20 +1,20 @@
-import React from 'react'
-import './header.css'
+// import React from 'react'
+// import './header.css'
 
-function header() {
-  // const [dropdownOpen, setDropdownOpen] = useState(false);
-  return (
-<nav className="navbar">
-      <div className="navbar-logo">LOGO</div>
-      <ul className="navbar-menu">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Product</a></li>
-        <li><a href="#">For sellers</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><button className="sign-in-btn">Sign In</button></li>
-        <li><button className="log-in-btn">Log In</button></li>
-      </ul>
-    </nav>
+// function header() {
+//   // const [dropdownOpen, setDropdownOpen] = useState(false);
+//   return (
+// <nav className="navbar">
+//       <div className="navbar-logo">LOGO</div>
+//       <ul className="navbar-menu">
+//         <li><a href="#">Home</a></li>
+//         <li><a href="#">Product</a></li>
+//         <li><a href="#">For sellers</a></li>
+//         <li><a href="#">Contact</a></li>
+//         <li><button className="sign-in-btn">Sign In</button></li>
+//         <li><button className="log-in-btn">Log In</button></li>
+//       </ul>
+//     </nav>
 
 //     // <nav className="navbar">
 //     //  <div className="navbar-logo">LOGO Soon</div>
@@ -36,7 +36,7 @@ function header() {
 //     //  <li><button className="sign-in-btn">Sign In</button></li>
 //     //  <li><button className="log-in-btn">Log In</button></li>
 //     // </nav>
-  );
-}
+//   );
+// }
 
-export default header
+// export default header
