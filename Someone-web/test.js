@@ -118,12 +118,95 @@ console.log(allColors);
 console.log("----------*----------");
 console.log("Rest Parameter");
 // Rest Parameter : ใช้ในการส่งค่า Parameter เข้าไปทำงานใน Function โดยไม่จำกัดจำนวนโดยใช้เครื่องหมาย ...
+// ข้างล่างนี้คืออันที่ไม่ได้ใช้ Parameter ทำให้เมื่อใส่เลขน้อยกว่าตัวแปร จะไม่สามารถอ่านค่าได้
+// summation=(x,y,z)=>{
+//     return x+y+z;
+// }
 
-summation=(x,y)=>{
-    return x+y;
+// console.log(summation(50,100));
+// console.log(summation(1234,4321));
+// console.log(summation(12345,54321,12345));
+summation=(...numberArr)=>{
+    let total=0;
+    for(let number of numberArr) total+=number; //0+10+20 เป็นการดึงเลขจากในอาร์เรย์มาบวกกัน
+    return total
 }
 
-console.log(summation(50,100));
-console.log(summation(40,15));
-console.log(summation(1234,4321));
+console.log(summation(10+20));
+console.log(summation(10+20+30+40));
+console.log("----------*----------");
+console.log("Destructuring");
+// Destructuring คือ การกำหนดค่าที่อยู่ภายใน Array หรือ Object ให้กับตัวแผร โดยใช้วิธีการจับคู่ตัวแปรกับค่าใน array หรือ Object
+// ex. 
+// const books = ["python","sql"];
+// const a1 = books[0]; //(python)
+// const b2 = books[1]; //(sql)
+// วิธีการใช้งาน
+// แบบ Array
+const books = ["python","sql"]; 
+const [a1,b2] = books; //const [,b2] = books;
+
+console.log(a1);
+console.log(b2);
+
+console.log("----------*----------");
+// แบบ Object
+const product = {
+    productName : "computer",
+    price:300,
+    stock:10
+}
+// const productName = product.productName;
+// const price = product.price;
+// const stock = product.stock;
+
+const {productName,stock} = product;
+
+console.log(productName);
+// console.log(price);
+console.log(stock);
+
+console.log("----------*----------");
+console.log("Default Parameter");
+// default parameter
+getDataCustomer=(customersName,customersAddress="Abyss")=>{
+    // if(!customersAddress){
+    //     customersAddress = "Abyss";
+    // }
+    const address = `Customer Name : ${customersName}
+    address : ${customersAddress}`
+    return address;
+}
+
+console.log(getDataCustomer("Zushi","Bangkok"));
+console.log(getDataCustomer("ZenZen"));
+
+console.log("----------*----------");
+console.log("Join,concat");
+// join คือการเปลี่ยนจากข้อมูล Array ไปเป็น string
+const data1 = [100,200,300];
+const data2 = [400,500];
+console.log(data1);
+console.log(data1.join("-"));
+console.log(data1);
+
+// const results = datas.join()
+// console.log(results)
+const alldata = data1.concat(data2);
+console.log(alldata);
+console.log(alldata.join(" "));
+
+console.log("----------*----------");
+console.log("Push, pop, shift, unshift");
+// push เพิ่มสมาชิกต่อท้าย
+const data3 = [10,20,30];
+console.log(data3);
+
+data3.push(...[100,20,30]);
+console.log(data3);
+
+// pop เอาตัวท้ายออกไป
+data3.pop();
+data3.pop();
+console.log(data3);
 
