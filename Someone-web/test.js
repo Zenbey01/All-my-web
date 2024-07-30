@@ -201,12 +201,98 @@ console.log("Push, pop, shift, unshift");
 // push เพิ่มสมาชิกต่อท้าย
 const data3 = [10,20,30];
 console.log(data3);
-
+console.log("push");
 data3.push(...[100,20,30]);
 console.log(data3);
 
 // pop เอาตัวท้ายออกไป
 data3.pop();
 data3.pop();
+console.log("pop");
 console.log(data3);
 
+// shift เอาตัวด้านหน้าออก
+data3.shift()
+data3.shift()
+console.log("shift");
+console.log(data3);
+
+// unshift คือการเพิ่มอาร์เรย์ไว้ด้านหน้า
+data3.unshift(10,15)
+data3.unshift(45)
+console.log("unshift");
+console.log(data3);
+
+console.log("----");
+// Splice(ตำแหน่งที่จะลบ,จำนวนที่จะลบ,สมาชิกที่ต้องแทรกเข้าไปอยู่ในอาร์เรย์)
+const dataSplice = [10,20,30,40,50];
+console.log(dataSplice);
+console.log("Splice");
+dataSplice.splice(1,2,999);
+console.log(dataSplice);
+
+console.log("----");
+// Slice(ตำแหน่งเริ่มต้น,จำแหน่งสุดท้าย-1)
+const dataSlice = [10,20,30,40,50];
+console.log(dataSlice);
+console.log("Slice");
+const lastData = dataSlice.slice(1,3); //1,2 [20,30]
+console.log(lastData);
+
+console.log("----------*----------");
+console.log("Loop, ForEach, ForOf");
+
+const dataAry = [10,20,30,40,50];
+
+console.log(dataAry[0]);
+console.log(dataAry[1]);
+console.log(dataAry[2]);
+console.log(dataAry[3]);
+console.log(dataAry[4]);
+
+console.log(".");
+
+for(let i = 0; i<dataAry.length; i++){
+    console.log(dataAry[i]);
+}
+
+console.log(".");
+
+for(let i = 0; i<dataAry.length; i++){
+    if (dataAry[i]>=30) break;
+    console.log(`ลำดับที่ ${i} = ${dataAry[i]}`);
+}
+
+console.log("ForEach");
+// ไม่สามารถ break หรือ continew
+
+dataAry.forEach(e => { 
+    if(e>=30){
+        console.log("hello");
+    }
+    console.log(e);
+    console.log(`สมาชิกใน Array data = ${e}` );
+});
+
+let sum = 0;
+dataAry.forEach(e => {
+    sum+=e;
+    console.log(`ผลรวม = ${sum}`);
+});
+
+for ( const element of dataAry) {
+    if(element >= 40) break;
+    console.log(`สมาชิก Array Data = ${element}`);
+}
+
+console.log("----------*----------");
+console.log("การค้นหาข้อมูลใน Array");
+// indexOf(ข้อมูล) => ผลการค้นหาจะได้ตำแหน่ง index ที่ค้นเจอ ถ้าค้นไม่เจอจะได้ -1
+// find(ข้อมููล) => ผลการค้นหาจะได้ข้อมูลที่ค้นเจอ ถ้าค้นไม่เจอจะได้ Undefined
+// findIndex(ข้อมูล) => ผลการค้นหาจะได้ตำแหน่ง index ที่ค้นเจอ ถ้าค้นไม่เจอจะได้ -1
+
+const colorsFind = ["red","green","blue","sky","yellow"];
+
+const indexColer1 = colorsFind.indexOf("yellow");
+
+console.log(indexColer1);
