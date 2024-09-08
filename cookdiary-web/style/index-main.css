@@ -21,6 +21,12 @@ body {
     background: var(--light-bg);
     /* font-family: "Space Grotesk", sans-serif; */
     color: var(--dark);
+    /* color: white; */
+    background-color: #e9e9f0;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
 }
 
 main {
@@ -33,10 +39,10 @@ main {
 
 /* Zone card */
 
-  h3 {
-    font-size: 1.5em;
-    font-weight: 700;
-  }
+.box-title {
+  font-size: 1.5em;
+  font-weight: 700;
+}
   
   p {
     font-size: 1em;
@@ -54,13 +60,41 @@ main {
     color: inherit;
   }
   
+/* .button-menu {
+  display: flex;
+  
+} */
+
+.bar-menu {
+  margin: 10px 250px;
+}
+
+.button-menu {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  gap: 10px;
+}
+
+.button-menu:hover {
+  background-color: #0056b3;
+}
+
+  .card-menu {
+    margin: 0 200px;
+  }
+
   .wrap {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
     width: 100%;
     gap: 24px;
-    padding: 24px;
+    padding: 10px 50px;
     flex-wrap: wrap;
   }
   
@@ -211,7 +245,6 @@ main {
   padding: 20px; /* ระยะห่างด้านในของคอนเทนเนอร์ */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* เงา */
   border-radius: 10px; /* มุมโค้งมน */
-
 }
 
 /* Logo styling */
@@ -317,4 +350,138 @@ nav ul li a.active {
   padding: 20px; /* ระยะห่างด้านในของคอนเทนเนอร์ */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* เงา */
   border-radius: 10px; /* มุมโค้งมน */
+}
+
+.title-type {
+  color: #D54321;
+  display: flex;
+  justify-content: center;
+}
+
+.type {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; 
+  margin: 50px 150px;
+}
+
+.type-food {
+  /* min-width: 100%; */
+  justify-content: space-around;
+  align-items: center; 
+}
+
+.bg-food {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.container-card {
+  width: 100%;
+  width: 820px;
+  height: 340px;
+  display: flex;
+  gap: 7.5px;
+  margin-inline: 100px;
+  margin-top: 30px ;
+}
+
+.card-type {
+  min-width: 70px;
+  height: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: flex-end;
+  flex-grow: 1;
+  cursor: pointer;
+  position: relative;
+  transition: flex-grow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+  --transition-timing: 0.35s;
+}
+
+/* .card.active {
+  flex-grow: 100;
+} */
+
+.card-type:hover {
+  flex-grow: 7;
+}
+
+.card-type > .bg-food {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.4);
+  z-index: -1;
+  transition: var(--transition-timing) ease;
+}
+.card-type:hover > .bg-food {
+  filter: brightness(1);
+}
+
+.card-type > .card-content {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 20px;
+  overflow: hidden;
+  transition: var(--transition-timing);
+  z-index: 10;
+}
+.card-type:hover > .card-content {
+  inset: 20px;
+  top: auto;
+}
+
+.card-content > * {
+  transition: var(--transition-timing);
+}
+
+.card-content > .profile-image {
+  min-width: 50px;
+  max-width: 50px;
+  height: 50px;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.card-type:hover .profile-image {
+  border: 1px solid rgb(110, 252, 205);
+}
+.profile-image > svg {
+  stroke: #fefefe;
+}
+.card-type:hover .profile-image > svg {
+  stroke: rgb(110, 252, 205);
+}
+
+.card-content > .title {
+  white-space: pre;
+  margin-left: 10px;
+  translate: 0 100%;
+  opacity: 0;
+}
+.card-type:hover .title {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.card-type > .backdrop {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100px;
+  z-index: 0;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
 }
