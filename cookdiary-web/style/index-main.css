@@ -22,7 +22,7 @@ body {
     /* font-family: "Space Grotesk", sans-serif; */
     color: var(--dark);
     /* color: white; */
-    background-color: #e9e9f0;
+    background-color: #F2F4F8;
     /* display: flex;
     justify-content: center;
     align-items: center; */
@@ -31,6 +31,17 @@ body {
 
 main {
   margin: 0 100px;
+}
+
+.hero-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+.title-one{
+  justify-content: center;
 }
 
 .hero-section {
@@ -72,7 +83,7 @@ main {
 .button-menu {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #007BFF;
+  background-color: #E45B2B;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
