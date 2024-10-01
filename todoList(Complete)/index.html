@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="img/todo-svgrepo-com.svg">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js"></script>
+    <title>Today List</title>
+</head>
+
+<body>
+    <header>
+        <h1>Today List</h1>
+    </header>
+    
+    <footer class="footer-text">
+        <script language="javascript"> 
+            now = new Date(); 
+            var thday = new Array ("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+            var thmonth = new Array ("January","February","March","April","May","June","July","August","September","October","November","December");
+    
+            // document.write("วัน" + thday[now.getDay()]+ "ที่ "+ now.getDate()+ " " + thmonth[now.getMonth()]+ " " + (now.getFullYear()));
+            document.write(now.getDate()+ " " + thmonth[now.getMonth()]+ " " + (now.getFullYear()));
+            </script>
+    </footer>
+
+    <div class="add-task-container">
+        <input type="text" maxlength="12" id="taskText" placeholder="New Activity..." onkeydown="if (event.keyCode == 13) document.getElementById('add').click()">
+        <button id="add" class="button add-button" onclick="addTask()">Add</button>
+    </div>
+    
+    <div class="main-container">
+        <ul class="columns">
+            <li class="column not-started-column">
+                <div class="column-header">
+                    <h4>Not Started</h4>
+                </div>
+                <ul class="task-list" id="not-started">
+                </ul>
+            </li>
+            <li class="column in-progress-column">
+                <div class="column-header">
+                    <h4>In Progress</h4>
+                </div>
+                <ul class="task-list" id="in-progress">
+                </ul>
+            </li>
+            <li class="column done-column">
+                <div class="column-header">
+                    <h4>Done</h4>
+                </div>
+                <ul class="task-list" id="done">
+                </ul>
+            </li>
+            <li class="column cancel-column">
+                <div class="column-header">
+                    <h4>Cancel</h4>
+                </div>
+                <ul class="task-list" id="cancel">
+                </ul>
+                <div class="column-button">
+                    <button class="button delete-button" onclick="emptyTrash()">Delete</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script src="javascript/script.js"></script>
+</body>
+</html>

@@ -33,5 +33,5 @@ function addTask() {
 /* Vanilla JS to delete tasks in 'Trash' column */
 function emptyTrash() {
 	/* Clear tasks from 'Trash' column */
-	document.getElementById("trash").innerHTML = "";
+	document.getElementById("cancel").innerHTML = "";
 }
